@@ -5,9 +5,10 @@ from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 
 app = Flask(__name__)
+#Creating an object of Flask.
 
 @app.route('/',methods=['GET'])  # route to display the home page
-@cross_origin()
+@cross_origin()#Require when deploying the app on cloud. If not mentioned, will not be able to access it from different cloud locations
 def homePage():
     return render_template("index.html")
 
